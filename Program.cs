@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+
+// Main loop
+while (true)
+{
+   Console.WriteLine("Text");
+   string input = Console.ReadLine();
+}
