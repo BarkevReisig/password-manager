@@ -1,7 +1,15 @@
-// For handling input and user control logic 
 using System;
 using static UserInterface;
 
+// For handling input and user control logic.
+// ProcessInput() is the entry method which will call the
+// relevant methods for the supplied user input.
+//
+// Terminology:
+// entry - A row of data containing a service, username, and password.
+// service - The website, app, etc. that the entry is for. Acts as the id so no duplicates.
+// username - The email or other identifier used for the service.
+// password - The password.
 public static class InputHandling
 {
     // Parses input to call the method that matches the command
@@ -27,32 +35,32 @@ public static class InputHandling
         }
     }
 
-    // Retrieve password for a specified account (email, service pair)
-    private static void GetPassword(string service, string email)
+    // Changes the username linked to the specified service.
+    private static void ChangeUsername(string service)
+    {
+    }
+
+    // Creates a new entry for the specified service using the specified username.
+    private static void CreateEntry(string service, string username)
     {
     }
     
-    // Generate password to link with a new specified account
-    private static void GeneratePassword(string service, string email)
+    // Deletes the entry specified entry.
+    private static void DeleteEntry(string service)
+    {
+    }
+
+    // Generates a new password to replace the password paired with the specified service.
+    private static void GenerateNewPassword(string service)
+    {
+    }
+
+    // Retrieves the login data for the specified service.
+    private static void GetLoginData(string service)
     {
     }
     
-    // Generate new password to replace a password linked with an existing account
-    private static void GenerateNewPassword(string service, string email)
-    {
-    }
-
-    // Change the email linked to a specified service
-    private static void ChangeEmail(string service)
-    {
-    }
-
-    // Delete an entire account entry
-    private static void DeleteAccount(string service, string email)
-    {
-    }
-
-    // Undo the last action taken
+    // Undos the last action taken.
     private static void Undo()
     {
     }
