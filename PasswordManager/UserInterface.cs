@@ -8,17 +8,12 @@ public static class UserInterface
         Console.WriteLine("WelcomeMessage");
     }
 
-    public static void PrintMenu()
-    {
-        Console.WriteLine("Menu");
-    }
-
     public static void PrintHelp()
     {
         Console.WriteLine("Help");
     }
 
-    public static void PrintInvalidInputMessage(string input)
+    public static void PrintInvalidInput(string input)
     {
         Console.WriteLine($"{input} is not a valid command");
     }
