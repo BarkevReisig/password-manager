@@ -16,9 +16,6 @@ public static class InputHandling
     // specified within input. Parameter input must have format:
     // "command arg1 arg2 ..." in order to be parsed correctly.
     // Unkown commands simply print an error message.
-    // Correct commands that expect different arguments than given
-    // will call the relevant methods but any error handling will
-    // take place there.
     public static void ProcessInput(string input)
     {
         string[] parsedInput = input.Split(" ");
@@ -29,19 +26,32 @@ public static class InputHandling
             case "help":
                 PrintHelp();
                 break;
+            case "ce":
+            case "create":
+                CreateEntry(parsedInput);
+                break;
+            case "de":
+            case "delete":
+                break;
+            case "gd":
+            case "get":
+                break;
             default:
-                PrintInvalidInput(input);
+                PrintInvalidInput(parsedInput[0]);
                 break;
         }
     }
 
     // Changes the username linked to the specified service.
-    private static void ChangeUsername(string service)
+    private static void ChangeUsername(string[] parsedInput)
     {
     }
 
-    // Creates a new entry for the specified service using the specified username.
-    private static void CreateEntry(string service, string username)
+    // If parsedInput does not have length 3, prints a warning and returns.
+    // If parsedInput[1] is an already existing service, prints a warning and returns.
+    // Othewise, creates a new entry with service = parsedInput[1] and username = parsedInput[2]
+    // and password = a randomly generated sequence of symbols.
+    private static void CreateEntry(string[] parsedInput)
     {
     }
     
@@ -60,7 +70,7 @@ public static class InputHandling
     {
     }
     
-    // Undos the last action taken.
+    // Undos the last data-changing action taken.
     private static void Undo()
     {
     }
